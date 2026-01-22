@@ -1,0 +1,32 @@
+// quesion - given an array count no of elements having atleast 1 element greater than itself
+import java.util.Scanner;
+public class practic{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); 
+        System.err.println("enter the size of array");
+        int size = sc.nextInt();
+
+        int[] arr = new int[size];
+        System.out.println("enter"+size+"element");
+        for(int i=0 ; i<size; i++){
+            arr[i]= sc.nextInt();
+        }
+        int count=0;
+        int max =arr[0];
+        for(int num : arr){
+            if(num> max){
+                max=num;
+            }
+        }
+        for(int num : arr){
+            if(num<max){
+                count++;
+            }
+        }
+        System.out.println("Number of elements greater than itself: "+count);
+        }
+    }
+
+// pseudp code
+// step1 - itreate and find the max  of the maxx of the array.
+// step2 - iterate and get the no of element which are not equal to max 
